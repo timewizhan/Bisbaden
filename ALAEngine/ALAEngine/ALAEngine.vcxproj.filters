@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{25c6acb6-b8c0-4766-8278-b639afbaf0ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Struct">
+      <UniqueIdentifier>{14289c5a-19c3-4147-9628-9756d572e4ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Engine Header">
+      <UniqueIdentifier>{642eca30-bae0-4320-a7fb-15720750eb72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Engine Source">
+      <UniqueIdentifier>{be473bbe-3b16-459d-b689-edaad7ac17ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Common">
+      <UniqueIdentifier>{d1ef1715-f4ea-4817-a630-eba17914cb08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Log">
+      <UniqueIdentifier>{e036daa6-2372-41cc-9c98-0085272c46ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Log">
+      <UniqueIdentifier>{13f057f2-0069-4ed7-9d92-4a3e7e1be128}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAEngine.cpp">
+      <Filter>Source\Engine Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAAnalysis.cpp">
+      <Filter>Source\Engine Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAParse.cpp">
+      <Filter>Source\Engine Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAArrangement.cpp">
+      <Filter>Source\Engine Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ALACombination.cpp">
+      <Filter>Source\Engine Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ALAEngine.h">
+      <Filter>Header\Engine Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
+      <Filter>Header\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>Header\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="Writing.h">
+      <Filter>Header\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="WordType.h">
+      <Filter>Header\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="ALAAnalysis.h">
+      <Filter>Header\Engine Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ALAParse.h">
+      <Filter>Header\Engine Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ALACombination.h">
+      <Filter>Header\Engine Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ALAArrangement.h">
+      <Filter>Header\Engine Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Header\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Errno.h">
+      <Filter>Header\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Language.h">
+      <Filter>Header\Struct</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

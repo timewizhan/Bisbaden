@@ -1,0 +1,100 @@
+#include "ALAEngine.h"
+#include "Log.h"
+
+////////////////////////////////////////////////////////////////////////////////////////
+CALAEngine::CALAEngine() 
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+CALAEngine::~CALAEngine() 
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::CheckVersion()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::BasicLoad()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::SetEnvironment()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::ErrorCheck()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::ShowResult()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::AccessFile(FILE **pFile, const  char *pFileName)
+{
+	errno_t dwErrno;
+	dwErrno = fopen_s(pFile, pFileName, "r");
+	if (dwErrno != 0)
+		return E_RET_FAIL;
+
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::LoadEngine()
+{
+	return E_RET_SUCCESS;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::StartEngine(const char *pFileName)
+{
+	DebugLog("Start to ALAEngine");
+	DWORD dwRet = E_RET_SUCCESS;
+	FILE *pFile = NULL;
+	try
+	{
+		DebugLog("Start to access file");
+		dwRet = AccessFile(&pFile, pFileName);
+		if (dwRet != E_RET_SUCCESS) {
+			throw std::exception("Fail to Access File");
+		}
+
+		DebugLog("Start to operate analysis");
+		dwRet = m_ALAAnalysis.StartAnalysis(pFile, m_stWriting);
+		if (dwRet != E_RET_SUCCESS) {
+			throw std::exception("Fail to operate analysis");
+		}
+	}
+	catch (std::exception &e)
+	{
+		ErrorLog(e.what());
+		if (pFile != NULL)
+			::fclose(pFile);
+		dwRet = E_RET_FAIL;
+	}
+
+	/*
+		Finish Engine
+	*/
+	DebugLog("Finish ALAEngine");
+	return dwRet;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+DWORD CALAEngine::UnLoadEngine()
+{
+	return 0;
+}
